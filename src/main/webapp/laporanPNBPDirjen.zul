@@ -1,0 +1,69 @@
+<?page id="pagePotensiArmada" title="Simlala - Potensi Armada" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:w="http://www.zkoss.org/2005/zk/client">
+	<script type="text/javascript">
+	<![CDATA[
+	
+		function viewBar3DChart(uuid, strXML, type){
+			var chart = new FusionCharts("jslibxxx/FusionCharts/MSColumn3D.swf", "ChartId", "100%", "400", "0", "0");
+			if(type=="data"){
+				chart.setDataXML(strXML);
+			}else{
+				chart.setXMLUrl(strXML);
+				//chart.setXMLUrl("jslib/FusionCharts/Charts/CategorySales.xml");
+			}
+			chart.render(""+uuid+"");
+		}
+		function setMessage(uuid) {
+				//var msgDOM = jq('#' + uuid),
+				var	msgWidget = zk.Widget.$(uuid);
+				msgWidget.setValue('set value by send uuid to client side');
+			}
+		]]>
+	</script>
+	<style>
+		.windowStyle .z-window-embedded-cnt, 
+	              .z-window-embedded-body, 
+	              .z-window-overlapped-body, 
+	              .z-window-popup-body, 
+	              .z-window-highlighted-body, 
+	              .z-window-modal-body{
+	 				overflow:auto;
+	 	}
+	</style>
+	<window id="winLaporanPNBPDirjen" title="Rekap Penerimaan PNBP per Dirjen" border="normal"
+		width="100%" height="100%" apply="${laporanPNBPDirjen}" sclass="windowStyle">
+		<vbox align="center" pack="stretch">
+		<label multiline="true" id="lblJudul" style="font-size:14pt; font-weight:bold; color:#666666;"  />
+		<div id="divChartLaporan" />
+		<listbox id="lboxLaporanList" width="100%">
+			<auxhead>
+				<auxheader id="ahCaption" colspan="4" label="">
+					<hbox pack="stretch" style="padding: 2px">
+						<label value="Bulan :" />
+						<space bar="false" spacing="5px" />								
+						<listbox id="lsBoxBulan" mold="select" hflex="1"/>
+						<space bar="false" spacing="5px" />
+						<label value="Tahun :" />
+						<space bar="false" spacing="5px" />
+						<listbox id="lsBoxTahun" mold="select" hflex="1"/>
+						<space bar="false" spacing="5px" />
+						<space bar="false" spacing="5px" />
+						<button id="btnTampilkan" label="Tampilkan" />
+						<space bar="false" spacing="10px" />
+						<button id="btnDownload" label="Download" />
+					</hbox>
+				</auxheader>
+			</auxhead>
+			<listhead>
+				<listheader width="40px" valign="top" label="No" />
+				<listheader width="" valign="top" label="Kode Dirjen" />
+				<listheader width="" valign="top" label="Nama Dirjen" />
+				<listheader width="" valign="top" label="Nominal (IDR)" />
+				<listheader width="" valign="top" label="Frekuensi" />
+			</listhead>
+		</listbox>
+		</vbox>
+	</window>
+</zk>

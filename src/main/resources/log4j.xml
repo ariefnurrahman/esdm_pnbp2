@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<param name="Threshold" value="ALL" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-6p [%t] %c{1} M[%M] - %m\n" />
+		</layout>
+	</appender>
+	<appender name="roll.simlalareporting.file" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/APPSLOG/SimlalaReporting.log" />
+		<param name="MaxFileSize" value="4MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<param name="threshold" value="ALL" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-6p [%t] %c{1} M[%M] --> %m\n" />
+		</layout>
+	</appender>
+
+	<!-- priority | OFF | ALL | TRACE | DEBUG | INFO | WARN | ERROR | FATAL | -->
+
+	<category name="org.springframework">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.hibernate">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.zkoss">
+		<priority value="ERROR" />
+	</category>
+	<!-- ZKBoost Base -->
+	<category name="de.oxitec.zkboost">
+		<priority value="ERROR" />
+	</category>
+	<!-- Sample module1 -->
+	<category name="de.oxitec.magelaan">
+		<priority value="ERROR" />
+	</category>
+	<!-- ZKBoost menu -->
+	<category name="de.daibutsu.zk">
+		<priority value="ERROR" />
+	</category>
+
+    <!-- ehCache -->
+    <category name="net.sf">
+        <priority value="ERROR" />
+    </category>
+
+	<!-- JasperReport/DynamicReports -->
+	<category name="net.sf.jasperreports">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.apache.commons.digester">
+		<priority value="ERROR" />
+	</category>
+	<category name="org.apache.commons.beanutils.converters">
+		<priority value="ERROR" />
+	</category>
+	<category name="net.sf.dynamicreports">
+		<priority value="ERROR" />
+	</category>
+	<!-- /JasperReport/DynamicReports -->
+
+	<category name="com.mchange">
+		<priority value="ERROR" />
+	</category>
+	<category name="net.sf.jasperreports">
+		<priority value="ERROR" />
+	</category>
+
+	<!-- setup the log level -->
+	<!-- level | OFF | ALL | TRACE | DEBUG | INFO | WARN | ERROR | FATAL | -->
+	<root>
+		<priority value="ALL" />
+		<appender-ref ref="roll.simlalareporting.file" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</log4j:configuration>

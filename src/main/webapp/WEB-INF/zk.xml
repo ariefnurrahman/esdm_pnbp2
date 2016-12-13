@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Created by ZK Studio -->
+
+<zk>
+	<library-property>
+		<name>org.zkoss.zul.progressbox.position</name>
+		<value>center</value>
+	</library-property>
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>/index.zul</timeout-uri><!-- An empty URL can cause the browser 
+			to reload the same URL -->
+	</device-config>
+	<system-config>
+		<disable-event-thread>false</disable-event-thread>
+		<max-upload-size>-1</max-upload-size>
+	</system-config>
+	<!-- ========================================================== -->
+	<!--            running a zk application in a CLUSTER           -->
+	<!-- ========================================================== -->
+	<system-config>
+		<ui-factory-class>
+			org.zkoss.zk.ui.http.SerializableUiFactory
+		</ui-factory-class>
+	</system-config>
+</zk>

@@ -1,0 +1,104 @@
+<?page id="sessionTimeout" title=" ZKBoost Timeout " cacheable="false"
+    language="xul/html" zscriptLanguage="Java"?>
+<?meta content="text/html; charset=UTF-8" pageEncoding="UTF-8"?>
+
+<!-- ##### activate BOOTSTRAP 3 responsive layout ##### -->
+<?meta name="viewport" content="width=device-width, initial-scale=1.0"?>
+
+<!-- ##### auto redirect to root after XX seconds ##### -->
+<?meta http-equiv="refresh" content="5; url=./"?>
+
+<!-- ##### ZK taglib ##### -->
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+
+<!-- ##### Oxitec taglib. Placed in package: zkboost-utils-ui ##### -->
+<?taglib uri="http://www.oxitec.de/tld/oxitec-taglib" prefix="ox"?>
+
+<!-- ##### Spring variable resolver ##### -->
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<?link rel="stylesheet" href="/css/other_page.css" ?>
+<?link rel="stylesheet" href="/css/zk_page.css" ?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:w="http://www.zkoss.org/2005/zk/client"
+	xmlns:n="http://www.zkoss.org/2005/zk/native"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<n:div class="div-header-main">
+		<n:div class="container-fluid">
+				<div sclass="navbar-div-image">
+					<n:a class="image-kemenhub-navbar" href="#">
+						<image src="/ox_images/ox_kemenhub_img/kemenhub-logo-white.png"></image>
+					</n:a>				
+				</div>
+		</n:div>
+	</n:div>
+	<n:div class="text-center">
+			<n:br />
+			<n:br />
+			<n:br />
+		<n:h2 class="testColor3" style="color:blue;">Session Timeout</n:h2>
+			<n:br />
+			<n:h5 class="div-well-label label-deskripsi">
+				${ox:lDef('ox_Message_Info_Timeout','The page you request is no longer available. This is normally
+				caused by timeout, opening too many Web pages, or rebooting the server.')}
+			</n:h5>
+			<n:br />
+			<n:br />
+			<n:br />
+			<!-- <n:div >
+				<n:hr class="hr hr-line-usercrud" />
+			</n:div> -->
+			<n:br />
+			<n:a class="btn btn-md btn-primary" href="./">${labels.ox_goToApplication}</n:a>
+	</n:div>
+	<!-- <borderlayout sclass="borderlayout-index">
+		<center border="none">
+	<n:div class="div-text-timeout"/>
+		<n:div class="text-center div-text-timeout">
+			<n:h2 class="testColor3" style="color:blue;">Session Timeout</n:h2>
+			<n:br />
+			<n:h5 class="div-well-label label-deskripsi">
+				${ox:lDef('ox_Message_Info_Timeout','The page you request is no longer available. This is normally
+				caused by timeout, opening too many Web pages, or rebooting the server.')}
+			</n:h5>
+			<n:br />
+			<n:div >
+				<n:hr class="hr hr-line-usercrud" />
+			</n:div>
+			<n:br />
+			<n:a class="btn btn-md btn-primary" href="./">${labels.ox_goToApplication}</n:a>
+		</n:div>
+		</center>
+	</borderlayout> -->
+	
+	<!-- <n:div class="ox-div-gradient-vertical" style="padding-left: 0px; padding-right: 10px; height:100%">
+		<n:div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					
+			<n:div style="margin-top:50px;"></n:div>
+
+			<n:div class="text-center">
+				<n:h2 class="testColor3" style="color:blue;">Session Timeout</n:h2>
+				<n:br />
+
+				<n:h5 style="color:black;">
+					${ox:lDef('ox_Message_Info_Timeout','The page you request is no longer available. This is normally
+					caused by timeout, opening too many Web pages, or rebooting the server.')}
+				</n:h5>
+
+				<n:br />
+
+				<n:div>
+					<n:hr class="hr" />
+				</n:div>
+				<n:br />
+
+				<n:a class="btn btn-sm btn-default" href="./">${labels.ox_goToApplication}</n:a>
+
+			</n:div>class="text-center"
+
+		</n:div>
+
+	</n:div> -->
+</zk>
+
