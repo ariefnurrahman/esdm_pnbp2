@@ -9,6 +9,7 @@
 	<!-- Holds dependcies, plugins and their versions. -->
 	<!-- Paths to external repositories... -->
 	<!-- =============================================================== -->
+	<!-- =============================================================== -->
 
 	<parent>
 		<groupId>com.metrasys</groupId>
